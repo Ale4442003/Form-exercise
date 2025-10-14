@@ -28,7 +28,7 @@ const Form = () => {
     const handleSubmit = (e) => {
         e.preventDefault(); //non ricaricare la pagina quando invii il form
 
-            //controlla che i campi non siano vuoti e poi manda i dati
+        //controlla che i campi non siano vuoti e poi manda i dati
         if (!form.name || !form.surname || !form.email || !form.phone) {
             alert("Compila tutti i campi");
             return;
@@ -41,11 +41,11 @@ const Form = () => {
     return (
         <>
             <h1>Form</h1>
-            <label
-                htmlFor="name">
-                Name
-            </label>
             <form onSubmit={handleSubmit}>
+                <label
+                    htmlFor="name">
+                    Name
+                </label>
                 <input
                     type="text"
                     name="name"
