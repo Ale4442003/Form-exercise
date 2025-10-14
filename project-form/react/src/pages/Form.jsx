@@ -1,17 +1,20 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
 import { salvaForm } from "../store/features/infoSlice";
+
 
 const Form = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const info = useSelector((state) => state.info );
 
     const [form, setForm] = useState({
-        name: "",
-        surname: "",
-        email: "",
-        phone: "",
+        name: info.name,
+        surname: info.surname,
+        email: info.email,
+        phone: info.phone,
     })
 
     const handleChange = (event) => { //aggirona i dati del form mentre scrivo

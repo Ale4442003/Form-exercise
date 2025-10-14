@@ -2,16 +2,21 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const infoSlice = createSlice({
     name:'info',
-    initialState:[],
+    initialState:{ //sempre un oggetto
+        name: "",
+        surname: "",
+        email: "",
+        phone: "",
+    },
     reducers:{
         salvaForm (state, action) {
-            state.push(action.payload) //aggiunge i dati del form allo stato
-            //state = []
-            //state = [{ name: "...", surname: "...", email: "...", phone: "..." }]
+           state.name = action.payload.name
+           state.surname = action.payload.surname
+           state.email = action.payload.email
+           state.phone = action.payload.phone
         }
-       
     }
 })
 
-export const{ salvaForm } = infoSlice.actions
+export const { salvaForm } = infoSlice.actions
 export default infoSlice.reducer
