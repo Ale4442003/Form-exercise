@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 const Richiesta = () => {
     const info = useSelector((state) => state.info) //prendo i dati salvati in redux
     const lastInfo = info[info.length - 1];  // prendere l'ultimo salvato in redux
+    
     return (
         <>
             <h1>Richiesta</h1>

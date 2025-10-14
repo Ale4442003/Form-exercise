@@ -3,7 +3,7 @@ import infoReducer from './features/infoSlice'
 
 export default configureStore({
     reducer:{
-        info: infoReducer
+        info: infoReducer //nome dello slice
     }
 })
 
