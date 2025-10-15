@@ -10,7 +10,7 @@ const infoSlice = createSlice({
     },
     reducers:{
         salvaForm (state, action) {
-           state.name = action.payload.name
+           state.name = action.payload.name //action = oggetto che contiene i dati forniti a "salvaForm"(un action), payload = dove vengono racchiusi i dati
            state.surname = action.payload.surname
            state.email = action.payload.email
            state.phone = action.payload.phone
