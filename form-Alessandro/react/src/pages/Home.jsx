@@ -1,17 +1,19 @@
 import { useState } from "react";
-import {  useDispatch } from 'react-redux'
+import {  useDispatch, useSelector } from 'react-redux'
 import { setInfo } from "../store/features/infoSlice";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
     const dispatch = useDispatch()
-    const navigate = useNavigate
+    const navigate = useNavigate()
+    const info = useSelector(state => state.info)
+
 
     const [form, setForm] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: ''
+        firstName: info.firstName,
+        lastName: info.lastName,
+        email: info.email,
+        phone: info.phone
     })
 
     const handleInput = (event) => {
@@ -58,10 +60,10 @@ const Home = () => {
                         <input onInput={handleInput} value={form.phone} type="tel" id='phone' name="phone" />
                     </div>
                 </div>
-            </form>
             <div>
                 <button type="submit">Save</button>
             </div>
+            </form>
         </>
     )
 }
