@@ -1,6 +1,12 @@
 import { useState } from "react";
+import {  useDispatch } from 'react-redux'
+import { setInfo } from "../store/features/infoSlice";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+    const dispatch = useDispatch()
+    const navigate = useNavigate
+
     const [form, setForm] = useState({
         firstName: '',
         lastName: '',
@@ -15,6 +21,8 @@ const Home = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
+        dispatch(setInfo(form))
+        navigate('/confirm')
     }
 
     return (
